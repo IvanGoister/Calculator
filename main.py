@@ -1,9 +1,9 @@
 
 equation = input('Введіть рівняння: ')
 equation = equation.replace(' ', '')
-# Отримувати рівняння як стороку
-# Видалити зайві пробіли
-# Визначити позиції з знаками операції
+# Отримувати рівняння як стороку +
+# Видалити зайві пробіли +
+# Визначити позиції з знаками операції +
 # Розділити числа по окремим змінним
 # Пріоритети виконання операцій
 
@@ -27,6 +27,17 @@ for i in range len(equation):
     else:
         pass
 
+def create_numbers():
+    ttt=0
+    for i in symbols_loc:
+        numb=equation[ttt:i]
+        numbers.append(numb)
+        ttt=ttt+i
+    return numbers
+create_numbers()
+
+
+
 def symbols_location():
     for i in range len(equation):
         if equation[i] == "(":
@@ -43,5 +54,5 @@ def symbols_location():
             loc_divide.append(i)
         else:
             pass
-
+    return loc_open, loc_close, loc_plus, loc_minus, loc_multi, loc_divide
 symbols_location()
